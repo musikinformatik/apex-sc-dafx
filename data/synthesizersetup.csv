@@ -1,0 +1,10 @@
+"buffersize";"numeric";20;"form, bw buffers sizes"
+"sex";"numeric";1;"1 male, 0 female"
+"c";"numeric";34300;"speed of sound in cm/sec"
+"internendcorr";"numeric";1;"internal end correction"
+"openatleft";"numeric";0;"open at left"
+"skip";"numeric";20;
+"f0";"numeric";110;
+"fps";"numeric";10;"GUI parameter, frame/sec"
+"amplitude";"numeric";"0.8";"default amplitude for the synthesizer"
+"breathing";"numeric";1;
