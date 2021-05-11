@@ -5,7 +5,7 @@ include_directories(${SC_PATH}/include/common)
 include_directories(${SC_PATH}/external_libraries/libsndfile/)
 
 set(plugin_sources
-        VocaltractArea.cpp
+        VocalTractArea.cpp
 	KLVocalTract.cpp
 )
 
