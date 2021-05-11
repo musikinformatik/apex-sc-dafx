@@ -1,0 +1,87 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww18320\viewh13420\viewkind1
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs24 \cf0 To Build SC from source:\
+\
+cmake \
+**-DCMAKE_BUILD_TYPE=Release \
+X**-DCMAKE_OSX_ARCHITECTURES='i386;x86_64' \
+-DCMAKE_OSX_DEPLOYMENT_TARGET=10.6 \
+X**-DCMAKE_OSX_SYSROOT=/Developer/SDKs/MacOSX10.6.sdk/ \
+**-DCMAKE_INSTALL_PREFIX=./install \
+-DREADLINE_INCLUDE_DIR=/opt/local/include \
+-DREADLINE_LIBRARY=/opt/local/lib/libreadline.dylib \
+**-DSSE=ON -DSYSTEM_YAMLCPP=OFF ..\
+\
+optional: libsndfile, portaudio\
+`-DSNDFILE_INCLUDE_DIR=/opt/local/include`\
+`-DSNDFILE_LIBRARY=/opt/local/lib/libsndfile.dylib`\
+\
+I used this:\
+\
+cmake \
+-DCMAKE_BUILD_TYPE=Release\
+-DCMAKE_OSX_DEPLOYMENT_TARGET=10.7 \
+-DCMAKE_OSX_SYSROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk/\
+-DCMAKE_INSTALL_PREFIX=./install\
+-DREADLINE_INCLUDE_DIR=/opt/local/include  \
+-DREADLINE_LIBRARY=/opt/local/lib/libreadline.dylib \
+-DSNDFILE_INCLUDE_DIR=/opt/local/include\
+-DSNDFILE_LIBRARY=/opt/local/lib/libsndfile.dylib ..\
+\
+To Build UGen:\
+\
+e.g cd UGenSourcCode\
+\
+mkdir build\
+\
+cd build\
+\
+cmake -DSC_PATH=/Users/dtm3/Current/FDTD/supercollider ../\
+\
+make\
+\
+Used the following folder of SC3 source UGens:\
+\
+sc3-plugins-test\
+\
+And from this stripped back the source/CmakeLists.txt file and the SLUGens file and renamed as KLVocalTract\
+Builds and works ok.\
+\
+Development now taken KLVocalTract.cpp and added to sc_ugen_test with KLVocalTract.cpp added and compiles ok and runs!\
+\
+==\
+To Build MySaw.scx\
+\
+A. Instal the class file\
+\
+Save MySaw.sc in the SC Extensions folder. This will allow inclusion in a synth def (type MySaw in the IDE and check). The language is happy, but server hasn't got any thing to compile yet.\
+\
+B. Compile MySaw.cpp and test it\
+At the top of MySaw.cpp we see #include "SC_Plugin.h" \
+This directive tells the preprocessor to treat the contents of a specified file as if they appear in the source program at the point where the directive appears.\
+So we need to tell CMake (which will tell make) where to find this library - you could put the entire SC header files inside the same folder as your source, but that would obviously not be very convenient\
+\
+As before, we'll make a build out of source\
+	$ mkdir build\
+	$ cd build\
+Now we need to link to the libraries \
+	$ cmake -DSC_PATH=/\{SC_PATH\} ../ \
+\
+I have a local copy of the SC source at the same level as the app itself, in a folder called 'supercollider', so I use:\
+\
+	$ cmake -DSC_PATH=/Applications/SuperCollider/supercollider ../ \
+then\
+	$ make\
+\
+This should build MySaw.scx\
+\
+Copy it to the Extensions folder and test it!!\
+\
+Once you've done this a few times, you'll see the joy of moving files with command line utilities rather than dragging things around windows\
+\
+Alternatively you can use ccmake, which will give you prompts for all the resources needed - or the GUI app.\
+}

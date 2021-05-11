@@ -1,0 +1,1 @@
+/usr/bin/c++   -bundle -Wl,-headerpad_max_install_names   -o VocaltractArea.scx CMakeFiles/VocaltractArea.dir/VocaltractArea.cpp.o CMakeFiles/VocaltractArea.dir/tool.cpp.o 
