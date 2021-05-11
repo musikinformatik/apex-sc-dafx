@@ -1,2 +1,0 @@
-/Users/dtm3/Google Drive/Current/New Papers/DAFx2015/SC-Code/DAFx/UGenSourceCode/build/CMakeFiles/KLVocalTract.dir
-/Users/dtm3/Google Drive/Current/New Papers/DAFx2015/SC-Code/DAFx/UGenSourceCode/build/CMakeFiles/VocaltractArea.dir
