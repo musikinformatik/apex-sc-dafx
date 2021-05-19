@@ -1,0 +1,26 @@
+class:: KLVocalTract
+summary:: Vocal Tract Modelling by Murphy, Shelley and Ternström
+related:: TODO
+categories:: UGens>TODO
+
+description::
+
+Vocal Tract Modelling by Murphy, Shelley and Ternström
+
+
+classmethods::
+
+method::ar, kr
+
+argument::TODO
+
+argument::TODO
+
+
+examples::
+
+code::
+
+{ KLVocalTract.ar(/* TODO */) }.play
+
+::
