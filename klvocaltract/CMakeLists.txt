@@ -65,9 +65,26 @@ endif()
 # Begin target KLVocalTract
 
 set(KLVocalTract_cpp_files
-#    plugins/KLVocalTract/KLVocalTract.hpp
-    plugins/KLVocalTract/KLVocalTract.cpp
-)
+  plugins/KLVocalTract/KLVocalTract.cpp
+  # TODO - are all these needed?
+  plugins/KLVocalTract/areamapper.h
+  plugins/KLVocalTract/coordspace.h
+  plugins/KLVocalTract/floatarray.h
+  plugins/KLVocalTract/FormFreq.sc
+  plugins/KLVocalTract/front.h
+  plugins/KLVocalTract/genericarray.h
+  plugins/KLVocalTract/matrix2x2.h
+  plugins/KLVocalTract/path.h
+  plugins/KLVocalTract/segmentarray.h
+  plugins/KLVocalTract/segment.h
+  plugins/KLVocalTract/tool.cpp
+  plugins/KLVocalTract/tool.h
+  plugins/KLVocalTract/vector2d.h
+  plugins/KLVocalTract/vocaltract.h
+  plugins/KLVocalTract/vtparam.h
+  plugins/KLVocalTract/wall.h
+  )
+  
 set(KLVocalTract_sc_files
     plugins/KLVocalTract/KLVocalTract.sc
 )
@@ -90,8 +107,24 @@ sc_add_server_plugin(
 # Begin target VocalTractArea
 
 set(VocalTractArea_cpp_files
-#    plugins/KLVocalTract/KLVocalTract.hpp
-    plugins/KLVocalTract/VocalTractArea.cpp
+  plugins/KLVocalTract/VocalTractArea.cpp
+  # TODO - are all these needed?
+  plugins/KLVocalTract/areamapper.h
+  plugins/KLVocalTract/coordspace.h
+  plugins/KLVocalTract/floatarray.h
+  plugins/KLVocalTract/FormFreq.sc
+  plugins/KLVocalTract/front.h
+  plugins/KLVocalTract/genericarray.h
+  plugins/KLVocalTract/matrix2x2.h
+  plugins/KLVocalTract/path.h
+  plugins/KLVocalTract/segmentarray.h
+  plugins/KLVocalTract/segment.h
+  plugins/KLVocalTract/tool.cpp
+  plugins/KLVocalTract/tool.h
+  plugins/KLVocalTract/vector2d.h
+  plugins/KLVocalTract/vocaltract.h
+  plugins/KLVocalTract/vtparam.h
+  plugins/KLVocalTract/wall.h
 )
 set(VocalTractArea_sc_files
     plugins/KLVocalTract/VocalTractArea.sc
