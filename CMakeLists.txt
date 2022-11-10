@@ -5,7 +5,7 @@ include_directories(${SC_PATH}/include/common)
 include_directories(${SC_PATH}/external_libraries/libsndfile/)
 
 set(plugin_sources
-        VocalTractArea.cpp
+    VocalTractArea.cpp
 	KLVocalTract.cpp
 )
 
@@ -20,6 +20,7 @@ endif()
 
 foreach(plugin ${plugin_sources})
 	string(REPLACE .cpp "" plugin_name ${plugin} )
-		add_library(${plugin_name} MODULE ${plugin}; tool.cpp)
+	set(SRC_FILE, src/${plugin_name})
+	add_library(${plugin_name} MODULE ${SRC_FILE}; "src/tool.cpp")
 	list(APPEND plugins ${plugin_name})
 endforeach(plugin)
