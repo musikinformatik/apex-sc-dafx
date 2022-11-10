@@ -1,4 +1,6 @@
-klvocaltract/build/
+src/build/
+src/*.scx
+src/install
 
 .vscode/
 build/
