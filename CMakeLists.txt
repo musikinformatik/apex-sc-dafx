@@ -8,7 +8,7 @@
 # basic project config
 cmake_minimum_required(VERSION 3.5)
 set(project_name "klvocaltract")
-set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake_modules ${CMAKE_MODULE_PATH})
+set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/src/cmake_modules ${CMAKE_MODULE_PATH})
 set(CMAKE_CXX_STANDARD 11)
 
 ####################################################################################################
@@ -65,35 +65,35 @@ endif()
 # Begin target KLVocalTract
 
 set(KLVocalTract_cpp_files
-  plugins/KLVocalTract/KLVocalTract.cpp
+  src/plugins/KLVocalTract/KLVocalTract.cpp
   # TODO - are all these needed?
-  plugins/KLVocalTract/areamapper.h
-  plugins/KLVocalTract/coordspace.h
-  plugins/KLVocalTract/floatarray.h
-  plugins/KLVocalTract/FormFreq.sc
-  plugins/KLVocalTract/front.h
-  plugins/KLVocalTract/genericarray.h
-  plugins/KLVocalTract/matrix2x2.h
-  plugins/KLVocalTract/path.h
-  plugins/KLVocalTract/segmentarray.h
-  plugins/KLVocalTract/segment.h
-  plugins/KLVocalTract/tool.cpp
-  plugins/KLVocalTract/tool.h
-  plugins/KLVocalTract/vector2d.h
-  plugins/KLVocalTract/vocaltract.h
-  plugins/KLVocalTract/vtparam.h
-  plugins/KLVocalTract/wall.h
+  src/plugins/KLVocalTract/areamapper.h
+  src/plugins/KLVocalTract/coordspace.h
+  src/plugins/KLVocalTract/floatarray.h
+  src/plugins/KLVocalTract/FormFreq.sc
+  src/plugins/KLVocalTract/front.h
+  src/plugins/KLVocalTract/genericarray.h
+  src/plugins/KLVocalTract/matrix2x2.h
+  src/plugins/KLVocalTract/path.h
+  src/plugins/KLVocalTract/segmentarray.h
+  src/plugins/KLVocalTract/segment.h
+  src/plugins/KLVocalTract/tool.cpp
+  src/plugins/KLVocalTract/tool.h
+  src/plugins/KLVocalTract/vector2d.h
+  src/plugins/KLVocalTract/vocaltract.h
+  src/plugins/KLVocalTract/vtparam.h
+  src/plugins/KLVocalTract/wall.h
   )
   
 set(KLVocalTract_sc_files
-    plugins/KLVocalTract/KLVocalTract.sc
+    src/plugins/KLVocalTract/KLVocalTract.sc
 )
 #set(KLVocalTract_schelp_files
-#    plugins/KLVocalTract/KLVocalTract.schelp
+#    src/plugins/KLVocalTract/KLVocalTract.schelp
 #)
 
 sc_add_server_plugin(
-    "klvocaltract/KLVocalTract" # desination directory
+    "src/klvocaltract/KLVocalTract" # desination directory
     "KLVocalTract" # target name
     "${KLVocalTract_cpp_files}"
     "${KLVocalTract_sc_files}"
@@ -107,34 +107,34 @@ sc_add_server_plugin(
 # Begin target VocalTractArea
 
 set(VocalTractArea_cpp_files
-  plugins/KLVocalTract/VocalTractArea.cpp
+  src/plugins/KLVocalTract/VocalTractArea.cpp
   # TODO - are all these needed?
-  plugins/KLVocalTract/areamapper.h
-  plugins/KLVocalTract/coordspace.h
-  plugins/KLVocalTract/floatarray.h
-  plugins/KLVocalTract/FormFreq.sc
-  plugins/KLVocalTract/front.h
-  plugins/KLVocalTract/genericarray.h
-  plugins/KLVocalTract/matrix2x2.h
-  plugins/KLVocalTract/path.h
-  plugins/KLVocalTract/segmentarray.h
-  plugins/KLVocalTract/segment.h
-  plugins/KLVocalTract/tool.cpp
-  plugins/KLVocalTract/tool.h
-  plugins/KLVocalTract/vector2d.h
-  plugins/KLVocalTract/vocaltract.h
-  plugins/KLVocalTract/vtparam.h
-  plugins/KLVocalTract/wall.h
+  src/plugins/KLVocalTract/areamapper.h
+  src/plugins/KLVocalTract/coordspace.h
+  src/plugins/KLVocalTract/floatarray.h
+  src/plugins/KLVocalTract/FormFreq.sc
+  src/plugins/KLVocalTract/front.h
+  src/plugins/KLVocalTract/genericarray.h
+  src/plugins/KLVocalTract/matrix2x2.h
+  src/plugins/KLVocalTract/path.h
+  src/plugins/KLVocalTract/segmentarray.h
+  src/plugins/KLVocalTract/segment.h
+  src/plugins/KLVocalTract/tool.cpp
+  src/plugins/KLVocalTract/tool.h
+  src/plugins/KLVocalTract/vector2d.h
+  src/plugins/KLVocalTract/vocaltract.h
+  src/plugins/KLVocalTract/vtparam.h
+  src/plugins/KLVocalTract/wall.h
 )
 set(VocalTractArea_sc_files
-    plugins/KLVocalTract/VocalTractArea.sc
+    src/plugins/KLVocalTract/VocalTractArea.sc
 )
 #set(KLVocalTract_schelp_files
-#    plugins/KLVocalTract/KLVocalTract.schelp
+#    src/plugins/KLVocalTract/KLVocalTract.schelp
 #)
 
 sc_add_server_plugin(
-    "klvocaltract/KLVocalTract" # desination directory
+    "src/klvocaltract/KLVocalTract" # desination directory
     "VocalTractArea" # target name
     "${VocalTractArea_cpp_files}"
     "${VocalTractArea_sc_files}"
